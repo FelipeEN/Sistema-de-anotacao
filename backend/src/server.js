@@ -26,6 +26,23 @@ app.get("/api", (req,res)=>{
     })
 })
 
+app.get("/api/teste-banco", async (req, res) => {
+    try {
+        const resultado = await pool.query("SELECT NOW()")
+
+        res.json({
+            mensagem: "Conexão com o banco funcionando!",
+            horario: resultado.rows[0].now
+        })
+    } catch (erro) {
+        console.error("Erro ao conectar com o banco:", erro.message)
+
+        res.status(500).json({
+            mensagem: "Erro ao consultar o banco de dados"
+        })
+    }
+})
+
 app.listen(porta, ()=>{
     console.log(`api funcionando na porta ${porta}`)
 })

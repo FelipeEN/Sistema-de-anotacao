@@ -18,7 +18,7 @@ function App (){
 
         <Route
             path="/cadastro"
-            element={<Cadastro />}
+            element={<Cadastrar />}
         />
 
         <Route
