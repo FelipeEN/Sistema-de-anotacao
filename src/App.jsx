@@ -4,31 +4,42 @@ import  {Anotacao}  from './pages/anotacao'
 import  {Login}  from './pages/login'
 import  {VerAnotacoes}  from './pages/verAnotacoes'
 import  {Cadastrar}  from './pages/cadastro'
+import { ProtectedRoute } from "./ProtectedRoute"
+
 
 function App (){
   return(
-   <Routes>
-      
-      <Route
-        path="/"
-        element= {<Login />}
-      />
+    <Routes>
 
-      <Route
-        path="/anotacao"
-        element= {<Anotacao />}
-      />
+        <Route
+            path="/"
+            element={<Login />}
+        />
 
-    <Route
-      path="/anotacoes"
-      element={<VerAnotacoes />}
-    />
-    <Route
-      path="/cadastro"
-      element={<Cadastrar />}
-    />
+        <Route
+            path="/cadastro"
+            element={<Cadastro />}
+        />
 
-   </Routes>
+        <Route
+            path="/anotacao"
+            element={
+                <ProtectedRoute>
+                    <Anotacao />
+                </ProtectedRoute>
+            }
+        />
+
+        <Route
+            path="/anotacoes"
+            element={
+                <ProtectedRoute>
+                    <VerAnotacoes />
+                </ProtectedRoute>
+            }
+        />
+
+    </Routes>
   )
 }
 
