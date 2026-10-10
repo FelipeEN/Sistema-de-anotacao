@@ -9,7 +9,11 @@ const {
 
 const router = express.Router()
 
-router.post("/usuarios",criarUsuario)
+router.post("/usuarios", (req, res) => {
+    return res.status(403).json({
+        mensagem: "Cadastro de novos usuários desativado."
+    });
+});
 router.post("/login",loginUsuario)
 
 

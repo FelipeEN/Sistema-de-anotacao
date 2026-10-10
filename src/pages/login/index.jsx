@@ -82,7 +82,7 @@ export function Login (){
                      <button
                         type="button"
                         id="btnCadastrar"
-                        onClick={()=> navigate("/cadastro")}
+                      //  onClick={()=> navigate("/cadastro")}
                     >
                         Cadastrar
                     </button>
