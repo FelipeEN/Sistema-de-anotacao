@@ -4,6 +4,7 @@ import { Container } from "./styles";
 
 import {useNavigate} from "react-router-dom"
 
+import API_URL from "../../services/api";
 
 export function Anotacao (){
 
@@ -33,7 +34,7 @@ export function Anotacao (){
 
         try{
             const resultado = await fetch(
-                "http://localhost:3000/api/anotacoes",{
+              `${API_URL}/api/anotacoes`,{
                     method : "POST",
                     headers : {
                          "Content-Type": "application/json",

@@ -2,6 +2,9 @@ import {Container} from "./styles"
 import { useState } from "react"
 import {useNavigate} from "react-router-dom"
 
+import API_URL from "../../services/api";
+
+
 export function Cadastrar (){
 
     const navigate = useNavigate()
@@ -27,7 +30,7 @@ export function Cadastrar (){
         }
         try{
             const resultado = await fetch(
-                "http://localhost:3000/api/usuarios",
+                `${API_URL}/api/usuarios`,
                 {
                     method: "POST",
                     headers : {

@@ -2,6 +2,7 @@ import { Container } from "./styles";
 import { useEffect, useState } from "react";
 
 import{useNavigate }from "react-router-dom"
+import API_URL from "../../services/api";
 
 export function VerAnotacoes (){
 
@@ -22,7 +23,7 @@ export function VerAnotacoes (){
         try{
 
             const resultado = await fetch (
-                "http://localhost:3000/api/anotacoes",
+                `${API_URL}/api/anotacoes`,
                 {
                     method: "GET",
                     headers:{
@@ -51,7 +52,7 @@ export function VerAnotacoes (){
 
         try{
             const resultado = await fetch(
-                `http://localhost:3000/api/anotacoes/${anotacao.id}`,
+                `${API_URL}/api/anotacoes/${anotacao.id}`,
                 {
                     method:"PUT",
                     headers: {
@@ -85,7 +86,7 @@ export function VerAnotacoes (){
 
         try{
             const resultado = await fetch(
-                `http://localhost:3000/api/anotacoes/${anotacao.id}`,
+                `${API_URL}/api/anotacoes/${anotacao.id}`,
                 {
                     method:"PUT",
                     headers: {
@@ -119,7 +120,7 @@ export function VerAnotacoes (){
 
         try{
             const resultado = await fetch (
-                `http://localhost:3000/api/anotacoes/${anotacao.id}`,
+                `${API_URL}/api/anotacoes/${anotacao.id}`,
                 {
                     method: "DELETE",
                     headers: {

@@ -1,6 +1,7 @@
 import {Container} from "./styles"
 import { useState } from "react"
 import {useNavigate} from "react-router-dom"
+import API_URL from "../../services/api";
 
 export function Login (){
 
@@ -19,7 +20,7 @@ export function Login (){
 
         try{
             const resposta = await fetch(
-                "http://localhost:3000/api/login",
+                `${API_URL}/api/login`,
             {
                 method: "POST",
                 headers:{
